@@ -1,0 +1,11 @@
+title: $:/_StaticTemplates/Styles.css
+
+{{$:/boot/boot.css||$:/core/templates/plain-text-tiddler}}
+
+{{$:/core/ui/PageStylesheet||$:/core/templates/wikified-tiddler}}
+
+<$importvariables filter="[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]">
+
+{{$:/_StaticStyles||$:/core/templates/wikified-tiddler}}
+
+</$importvariables>

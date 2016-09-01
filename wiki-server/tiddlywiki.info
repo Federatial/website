@@ -1,0 +1,17 @@
+{
+	"description": "Server configuration of Federatial website",
+	"plugins": [
+		"tiddlywiki/tiddlyweb",
+		"tiddlywiki/filesystem"
+	],
+	"themes": [
+		"tiddlywiki/vanilla",
+		"tiddlywiki/snowwhite"
+	],
+	"includeWikis": [
+		"../wiki"
+	],
+	"config": {
+		"default-tiddler-location": "../wiki/tiddlers/content"
+	}
+}

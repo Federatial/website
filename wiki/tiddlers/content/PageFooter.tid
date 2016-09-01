@@ -1,0 +1,21 @@
+title: $:/_PageFooter
+
+<div class="tc-page-footer">
+
+<div class="tc-page-footer-inner">
+
+{{$:/_Logo}}
+
+<div class="tc-page-footer-intro">
+
+Copyright &copy; 2016 Federatial Limited
+
+Federatial is registered in England and Wales, Company No: 7874591
+
+Powered by [[TiddlyWiki|http://tiddlywiki.com]]
+
+</div>
+
+</div>
+
+</div>

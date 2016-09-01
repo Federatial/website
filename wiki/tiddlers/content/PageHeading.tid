@@ -1,0 +1,15 @@
+title: $:/_PageHeading
+
+<div class="tc-page-heading">
+
+{{$:/_Logo}}
+
+<div class="tc-page-heading-intro">
+
+!! Exploring software that empowers thinkers and makers
+
+We help clients understand and thrive in our new socio-technological world. Skilled in open, iterative development we build new categories of applications that help individuals and teams work with information at density and scale
+
+</div>
+
+</div>

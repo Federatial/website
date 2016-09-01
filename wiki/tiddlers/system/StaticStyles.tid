@@ -1,0 +1,174 @@
+title: $:/_StaticStyles
+
+\define register-font(family,title,style,weight)
+@font-face {
+  font-family: "$family$";
+  font-style: $style$;
+  font-weight: $weight$;
+  src: url(<<datauri "$title$">>) format("woff");
+}
+\end
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+/*
+** Fonts
+*/
+
+<<register-font "Lato" "$:/_fonts/lato-black-webfont.woff" "normal" "900">>
+<<register-font "Lato" "$:/_fonts/lato-blackitalic-webfont.woff" "italic" "900">>
+<<register-font "Lato" "$:/_fonts/lato-bold-webfont.woff" "normal" "700">>
+<<register-font "Lato" "$:/_fonts/lato-bolditalic-webfont.woff" "italic" "700">>
+<<register-font "Lato" "$:/_fonts/lato-hairline-webfont.woff" "normal" "100">>
+<<register-font "Lato" "$:/_fonts/lato-hairlineitalic-webfont.woff" "italic" "100">>
+<<register-font "Lato" "$:/_fonts/lato-italic-webfont.woff" "italic" "400">>
+<<register-font "Lato" "$:/_fonts/lato-light-webfont.woff" "normal" "300">>
+<<register-font "Lato" "$:/_fonts/lato-lightitalic-webfont.woff" "italic" "300">>
+<<register-font "Lato" "$:/_fonts/lato-regular-webfont.woff" "normal" "400">>
+
+html body.tc-body {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", "DejaVu Sans", sans-serif;
+}
+
+/*
+** Page background - visible during overscroll
+*/
+
+html {
+	background: <<colour federatial-black>>;
+}
+
+/*
+** Center the page
+*/
+
+@media (max-width: 850px) {
+
+html .tc-story-river {
+	padding-top: 42px;
+}
+
+}
+
+@media (min-width: 850px) {
+
+html .tc-page-container,
+nav.tc-hamburger-menu {
+	text-align: center;
+}
+
+html .tc-story-river,
+nav.tc-hamburger-menu ul {
+	position: relative;
+	width: 770px;
+	padding: 42px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+nav.tc-hamburger-menu ul {
+	padding: 0 80px;
+}
+
+.tc-page-footer-inner {
+	position: relative;
+	width: 770px;
+	padding: 42px 84px 0 84px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+}
+
+/*
+** Account for the hamburger menu when jumping to an anchor
+*/
+
+.tc-tiddler-anchor {
+	padding-top: 2em;
+	margin-top: -2em;
+}
+
+/*
+** Hamburger menu
+*/
+
+html nav.tc-hamburger-menu {
+	margin: 0 auto;
+	text-align: center;
+}
+
+html nav.tc-hamburger-menu {
+	border-top: 1px solid <<colour federatial-black>>;
+	border-bottom: 1px solid <<colour federatial-black>>;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: <<colour federatial-grey>>;
+	z-index: 990;
+}
+
+nav.tc-hamburger-menu ul {
+	list-style-type: none;
+}
+
+nav.tc-hamburger-menu ul li {
+	display: inline-block;
+	margin: 0.25em 0.5em 0.25em 0.5em;
+}
+
+nav.tc-hamburger-menu ul li p {
+	margin: 0;
+}
+
+nav.tc-hamburger-menu ul li a {
+	font-weight: 700;
+	color: <<colour federatial-white>>;
+	text-decoration: none;
+}
+
+nav.tc-hamburger-menu ul li a:hover {
+	color: #fff;
+}
+
+/*
+** Style tweaks
+*/
+
+h2.tc-title {
+	font-weight: 700;
+}
+
+/*
+** Page Heading
+*/
+
+.tc-page-heading {
+	margin: 3em 42px 9em 42px;
+}
+
+.tc-page-heading img {
+	width: 50%;
+	margin-left: -60px;
+}
+
+.tc-page-heading-intro {
+	font-weight: 300;
+	font-size: 2em;
+	line-height: 1.2;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.8);
+}
+
+/*
+** Page Footer
+*/
+
+.tc-page-footer {
+	background: <<colour federatial-grey>>;
+	color: <<colour federatial-white>>;
+	padding: 1em;
+}
+
+.tc-page-footer img {
+	width: 80px;
+}

@@ -1,0 +1,3 @@
+title: $:/_StaticTemplates/MenuLink
+
+<$link><$view field="title"/></$link>
