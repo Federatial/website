@@ -35,8 +35,9 @@ extension: .html
 `</ul>
 </nav>`
 <$importvariables filter="[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]">
-`<section class="tc-story-river">`
 <$view tiddler="$:/_PageHeading" format="htmlwikified"/>
+`<section class="tc-story-river">`
+<$view tiddler="$:/_StoryHeading" format="htmlwikified"/>
 <$list filter="HelloThere [all[tiddlers]!is[system]!is[image]![HelloThere]]" template="$:/_StaticTemplates/Tiddler"/>
 `</section>`
 <$view tiddler="$:/_PageFooter" format="htmlwikified"/>

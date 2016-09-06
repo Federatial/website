@@ -1,14 +1,16 @@
 title: $:/_PageHeading
 
-<div class="tc-page-heading">
+<div class="tc-page-background-logo-wrapper">
 
-{{$:/_Logo}}
+<div class="tc-page-background-logo">
 
-<div class="tc-page-heading-intro">
+<$transclude tiddler="$:/_MarkNative" mode="inline"/>
 
-!! Exploring software that empowers thinkers and makers
+<$transclude tiddler="$:/_MarkNative" mode="inline"/>
 
-We help clients understand and thrive in our new socio-technological world. Skilled in open, iterative development we build new categories of applications that help individuals and teams work with information at density and scale
+<$transclude tiddler="$:/_MarkNative" mode="inline"/>
+
+<$transclude tiddler="$:/_MarkNative" mode="inline"/>
 
 </div>
 

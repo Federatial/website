@@ -61,7 +61,6 @@ nav.tc-hamburger-menu ul {
 	position: relative;
 	width: 770px;
 	padding: 42px;
-	margin: 0 auto;
 	text-align: left;
 }
 
@@ -79,6 +78,11 @@ nav.tc-hamburger-menu ul {
 
 }
 
+html .tc-story-river {
+	z-index: 0;
+	margin: 0 auto;
+}
+
 /*
 ** Account for the hamburger menu when jumping to an anchor
 */
@@ -94,7 +98,6 @@ nav.tc-hamburger-menu ul {
 
 html nav.tc-hamburger-menu {
 	margin: 0 auto;
-	text-align: center;
 }
 
 html nav.tc-hamburger-menu {
@@ -109,6 +112,7 @@ html nav.tc-hamburger-menu {
 }
 
 nav.tc-hamburger-menu ul {
+	margin: 0 auto;
 	list-style-type: none;
 }
 
@@ -140,6 +144,55 @@ h2.tc-title {
 }
 
 /*
+** Page background
+*/
+
+.tc-page-background-logo-wrapper {
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1500px;
+    overflow: hidden;
+	fill: <<colour "federatial-bright-faded">>;
+}
+
+.tc-page-background-logo {
+}
+
+.tc-page-background-logo-wrapper svg {
+	position: absolute;
+}
+
+.tc-page-background-logo-wrapper svg:nth-child(1) {
+	left: 30%;
+	top: 400px;
+	width: 250px;
+	height: 250px;
+}
+
+.tc-page-background-logo-wrapper svg:nth-child(2) {
+	left: 20%;
+	top: 100px;
+	width: 350px;
+	height: 350px;
+}
+
+.tc-page-background-logo-wrapper svg:nth-child(3) {
+	left: 50%;
+	top: 200px;
+	width: 450px;
+	height: 450px;
+}
+
+.tc-page-background-logo-wrapper svg:nth-child(4) {
+	left: 5%;
+	top: 300px;
+	width: 550px;
+	height: 550px;
+}
+
+/*
 ** Page Heading
 */
 
@@ -149,7 +202,7 @@ h2.tc-title {
 
 .tc-page-heading img {
 	width: 50%;
-	margin-left: -60px;
+	margin-left: 50%;
 }
 
 .tc-page-heading-intro {
