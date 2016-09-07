@@ -22,7 +22,7 @@ extension: .html
 <style type="text/css">
 `{{$:/_StaticTemplates/Styles.css}}`
 </style>
-<title>`<$transclude field="caption"><$view field="title"/></$transclude>: {{$:/core/wiki/title}}`</title>
+<title>`{{$:/core/wiki/title}}`</title>
 </head>
 <body class="tc-body">
 <nav class="tc-hamburger-menu">
