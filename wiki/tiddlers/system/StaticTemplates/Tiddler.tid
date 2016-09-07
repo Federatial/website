@@ -7,11 +7,17 @@ title: $:/_StaticTemplates/Tiddler
 
 <div class="tc-titlebar">
 
+<div class="tc-tiddler-controls">
+
+<a href="#">`<$view tiddler="$:/core/images/up-arrow" format="text"/>`</a>
+
+</div>
+
 <h2 class="tc-title">
 
 <a class="tc-tiddler-anchor" id="`<$text text={{!!title}}/>`">
 `
-<$text text={{!!title}}/>
+<$view field="title" format="htmlencoded"/>
 `
 </a>
 
