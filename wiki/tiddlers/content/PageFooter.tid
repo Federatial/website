@@ -4,9 +4,21 @@ title: $:/_PageFooter
 
 <div class="tc-page-footer-inner">
 
+<div class="tc-page-footer-logo">
+
 {{$:/_Logo}}
 
+</div>
+
 <div class="tc-page-footer-intro">
+
+<div class="tc-page-footer-social">
+
+* <a href="https://twitter.com/Federatial" rel="noopener noreferrer" target="_blank">{{$:/core/images/twitter}} Twitter</a>
+* <a href="https://github.com/Federatial" rel="noopener noreferrer" target="_blank">{{$:/core/images/github}} ~GitHub</a>
+* <a href="https://www.linkedin.com/company/federatial-limited" rel="noopener noreferrer" target="_blank">{{$:/core/images/linked-in}} ~LinkedIn</a>
+
+</div>
 
 Copyright &copy; 2016 Federatial Limited
 

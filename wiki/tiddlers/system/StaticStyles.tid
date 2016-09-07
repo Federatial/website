@@ -84,8 +84,15 @@ html .tc-story-river {
 }
 
 /*
-** Account for the hamburger menu when jumping to an anchor
+** Tiddler display tweaks
 */
+
+.tc-tiddler-controls svg {
+    vertical-align: middle;
+	fill: <<colour tiddler-controls-foreground>>;
+}
+
+/* Account for the hamburger menu when jumping to an anchor */
 
 .tc-tiddler-anchor {
 	padding-top: 2em;
@@ -197,7 +204,7 @@ h2.tc-title {
 */
 
 .tc-page-heading {
-	margin: 3em 42px 9em 42px;
+	margin: 3em 42px 6em 42px;
 }
 
 .tc-page-heading img {
@@ -222,6 +229,36 @@ h2.tc-title {
 	padding: 1em;
 }
 
-.tc-page-footer img {
-	width: 80px;
+.tc-page-footer a,
+.tc-page-footer a:visited {
+    display: inline-block;
+	color: <<colour federatial-bright>>;
+	text-decoration: none;
+	padding: 2px;
 }
+
+.tc-page-footer a:hover {
+	background: <<colour federatial-bright>>;
+	color: <<colour federatial-black>>;
+}
+
+.tc-page-footer .tc-page-footer-logo img {
+	width: 160px;
+}
+
+.tc-page-footer-social ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.tc-page-footer-social ul li {
+    display: inline-block;
+    margin: 3px;
+}
+
+.tc-page-footer-social ul li a svg,
+.tc-page-footer-social ul li a:visited svg {
+	vertical-align: middle;
+	fill: <<colour federatial-black>>;
+}
+
