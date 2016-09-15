@@ -34,7 +34,7 @@ html body.tc-body {
 */
 
 html {
-	background: <<colour federatial-black>>;
+	background: <<colour federatial-bright>>;
 }
 
 /*
@@ -71,7 +71,7 @@ nav.tc-hamburger-menu ul {
 .tc-page-footer-inner {
 	position: relative;
 	width: 770px;
-	padding: 42px 84px 0 84px;
+	padding: 42px 84px 42px 84px;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -79,6 +79,7 @@ nav.tc-hamburger-menu ul {
 }
 
 html .tc-story-river {
+	position: relative;
 	z-index: 0;
 	margin: 0 auto;
 }
@@ -86,6 +87,15 @@ html .tc-story-river {
 /*
 ** Tiddler display tweaks
 */
+
+.tc-tiddler-frame {
+	transform-origin: 50% 0%;
+}
+
+body.scrolled-top .tc-tiddler-frame,
+body.scrolled-mid .tc-tiddler-frame {
+    cursor: pointer;
+}
 
 .tc-tiddler-controls svg {
     vertical-align: middle;
@@ -108,13 +118,13 @@ html nav.tc-hamburger-menu {
 }
 
 html nav.tc-hamburger-menu {
-	border-top: 1px solid <<colour federatial-black>>;
-	border-bottom: 1px solid <<colour federatial-black>>;
+	border-top: 1px solid <<colour federatial-grey>>;
+	border-bottom: 1px solid <<colour federatial-grey>>;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	background: <<colour federatial-grey>>;
+	background: <<colour federatial-mid>>;
 	z-index: 990;
 }
 
@@ -207,6 +217,17 @@ h2.tc-title {
 	margin: 3em 42px 6em 42px;
 }
 
+.tc-page-heading a.tc-tiddlylink {
+	text-shadow: none;
+    padding: 2px;
+}
+
+.tc-page-heading a.tc-tiddlylink:hover {
+	text-decoration: none;
+	background: <<colour federatial-primary>>;
+	color: <<colour federatial-bright>>;
+}
+
 .tc-page-heading img {
 	width: 50%;
 	margin-left: 50%;
@@ -214,7 +235,7 @@ h2.tc-title {
 
 .tc-page-heading-intro {
 	font-weight: 300;
-	font-size: 2em;
+	font-size: 1.6em;
 	line-height: 1.2;
 	text-shadow: -1px -1px 0px rgba(255,255,255,0.8);
 }
@@ -235,6 +256,7 @@ h2.tc-title {
 	color: <<colour federatial-bright>>;
 	text-decoration: none;
 	padding: 2px;
+    border-radius: 2px;
 }
 
 .tc-page-footer a:hover {
@@ -262,3 +284,33 @@ h2.tc-title {
 	fill: <<colour federatial-black>>;
 }
 
+/*
+** Adjustments for printing
+*/
+
+@media print {
+
+html {
+	background: transparent;
+}
+
+.tc-page-footer {
+	background: transparent;
+}
+
+.tc-story-river .tc-tiddler-frame {
+	transform: none !important;
+}
+
+.tc-hamburger-menu, .tc-page-background-logo-wrapper {
+	display: none;
+}
+
+.tc-page-heading, .tc-page-footer, .tc-page-footer-inner {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+}
