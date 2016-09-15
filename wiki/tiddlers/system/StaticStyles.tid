@@ -292,6 +292,19 @@ h2.tc-title {
 }
 
 /*
+** Adjustments for wide screens
+*/
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+
+html .tc-page-heading {
+	margin-top: 9em;
+	margin-bottom: 12em;
+}
+
+}
+
+/*
 ** Adjustments for narrow screens
 */
 
