@@ -269,6 +269,7 @@ body.scrolled-top .tc-page-scroll-prompt {
 	width: 3em;
 	height: 3em;
 	margin-bottom: 2em;
+    background: <<colour federatial-bright>>;
     border: 1px solid <<colour federatial-mid>>;
     fill: <<colour federatial-mid>>;
     border-radius: 40px;
@@ -352,6 +353,14 @@ html .tc-tiddler-frame {
 }
 
 @media (max-width: <<super-narrow-breakpoint>>) {
+
+.tc-page-scroll-prompt svg {
+	width: 2em;
+	height: 2em;
+	margin-bottom: 1.5em;
+    border-radius: 40px;
+    padding: 4px;
+}
 
 html .tc-tiddler-frame {
     padding: 14px 14px 14px 14px;
