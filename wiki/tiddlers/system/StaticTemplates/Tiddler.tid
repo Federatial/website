@@ -1,7 +1,7 @@
 title: $:/_StaticTemplates/Tiddler
 
 `
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists" data-tiddler-title="`<$text text={{!!title}}/>`">
 
 <div class="tc-tiddler-title">
 
@@ -9,7 +9,7 @@ title: $:/_StaticTemplates/Tiddler
 
 <div class="tc-tiddler-controls">
 
-<a href="#">`<$view tiddler="$:/core/images/up-arrow" format="text"/>`</a>
+<a href="#_top">`<$view tiddler="$:/core/images/up-arrow" format="text"/>`</a>
 
 </div>
 
