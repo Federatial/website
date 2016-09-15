@@ -33,7 +33,8 @@ extension: .html
 `</li>`
 </$list>
 `</ul>
-</nav>`
+</nav>
+<a id="_top"></a>`
 <$importvariables filter="[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]">
 <$view tiddler="$:/_PageHeading" format="htmlwikified"/>
 `<section class="tc-story-river">`
@@ -42,6 +43,9 @@ extension: .html
 `</section>`
 <$view tiddler="$:/_PageFooter" format="htmlwikified"/>
 </$importvariables>
-`</body>
+`<script>`
+{{{ [all[tiddlers+shadows]tag[$:/tags/_StaticTemplates/JavaScript]] ||$:/core/templates/plain-text-tiddler}}}
+`</script>
+</body>
 </html>
 `
