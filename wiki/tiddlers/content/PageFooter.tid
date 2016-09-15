@@ -31,3 +31,9 @@ Powered by TiddlyWiki
 </div>
 
 </div>
+
+<div class="tc-page-scroll-prompt">
+<$link to="HelloThere" tooltip="Scroll for more">
+{{$:/core/images/chevron-down}}
+</$link>
+</div>

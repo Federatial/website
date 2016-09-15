@@ -248,6 +248,39 @@ h2.tc-title {
 }
 
 /*
+** Page scroll prompt
+*/
+
+.tc-page-scroll-prompt {
+	position: fixed;
+	bottom: 0;
+	transition: opacity 500ms ease-in-out;
+	left: 0;
+	right: 0;
+	text-align: center;
+	opacity: 0;
+}
+
+body.scrolled-top .tc-page-scroll-prompt {
+	opacity: 1;
+}
+
+.tc-page-scroll-prompt svg {
+	width: 3em;
+	height: 3em;
+	margin-bottom: 2em;
+    border: 1px solid <<colour federatial-mid>>;
+    fill: <<colour federatial-mid>>;
+    border-radius: 40px;
+    padding: 12px;
+}
+
+.tc-page-scroll-prompt svg:hover {
+    background: <<colour federatial-mid>>;
+    fill: <<colour federatial-bright>>;
+}
+
+/*
 ** Page Footer
 */
 
