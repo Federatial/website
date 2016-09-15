@@ -114,7 +114,7 @@ function eachDomTiddler(callback) {
 
 function updateScrollAnimation(scrollPos) {
 	// Initialise
-	var animTop = tiddlerNormalPositions[0].y * 0.8, // // Lowest scroll position for the animation
+	var animTop = tiddlerNormalPositions[0].y * 0.8, // Lowest scroll position for the animation
 		pos = Math.min(1,scrollPos/animTop), // Scroll position 0..1
 		easedPos = easeInOutQuad(pos,0,1,1), // Eased scroll position 0..1
 		overEasedPos = easeInOutQuad(-scrollPos/(animTop/7),0,1,1); // Easing used for negative scroll positions
