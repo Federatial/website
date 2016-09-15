@@ -16,6 +16,7 @@ TODO: Make things more configurable
 
 var duration = 700,
   	lastScrollPosition = 0,
+  	tiddlerScrollOffset = 0,
 	isTicking = false,
 	tiddlerShuffledPositions = [],
 	tiddlerNormalPositions = [],
@@ -79,6 +80,8 @@ function onResize() {
 function measureTiddlers() {
 	// Measure the base position for the shuffled tiddlers
 	var shuffleTop = domPageHeader.offsetTop + domPageHeader.offsetHeight + parseInt(window.getComputedStyle(domPageHeader).marginBottom,10) / 2;
+	// Measure the offset for scrolling to a tiddler
+	tiddlerScrollOffset = document.querySelector(".tc-tiddler-frame .tc-tiddler-anchor").offsetTop;
 	// Save the current tiddler positions as the end positions
 	eachDomTiddler(function(domTiddler,index) {
 		tiddlerNormalPositions[index] = {
@@ -204,7 +207,7 @@ function scrollToTiddler(title) {
 	var index = tiddlerByTitle[title],
 		scrollPos = 0;
 	if(title in tiddlerByTitle) {
-		scrollPos = tiddlerNormalPositions[index].y - 100;
+		scrollPos = tiddlerNormalPositions[index].y + tiddlerScrollOffset;
 	}
 	scrollTo(scrollPos);
 }
