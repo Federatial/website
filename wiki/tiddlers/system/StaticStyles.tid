@@ -254,10 +254,9 @@ h2.tc-title {
 .tc-page-scroll-prompt {
 	position: fixed;
 	bottom: 0;
-	left: 0;
-	right: 0;
+	left: 50%;
+	right: 50%;
 	transition: opacity 500ms ease-in-out;
-	text-align: center;
 	opacity: 0;
 }
 
@@ -268,7 +267,6 @@ body.scrolled-top .tc-page-scroll-prompt {
 .tc-page-scroll-prompt svg {
 	width: 3em;
 	height: 3em;
-    background: <<colour federatial-bright>>;
     border: 1px solid <<colour federatial-mid>>;
     fill: <<colour federatial-mid>>;
     border-radius: 40px;
@@ -277,7 +275,7 @@ body.scrolled-top .tc-page-scroll-prompt {
 }
 
 .tc-page-scroll-prompt svg:hover {
-    background: <<colour federatial-mid>>;
+	background: <<colour federatial-mid>>;
     fill: <<colour federatial-bright>>;
 }
 
