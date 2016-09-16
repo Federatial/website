@@ -33,7 +33,11 @@ Powered by TiddlyWiki
 </div>
 
 <div class="tc-page-scroll-prompt">
+
 <$link to="HelloThere" tooltip="Scroll for more">
-{{$:/core/images/chevron-down}}
+
+<$transclude tiddler="$:/core/images/chevron-down" mode="inline"/>
+
 </$link>
+
 </div>
