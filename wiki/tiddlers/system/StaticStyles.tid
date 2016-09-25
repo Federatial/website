@@ -290,7 +290,9 @@ body.scrolled-top .tc-page-scroll-prompt {
 }
 
 .tc-page-footer a,
-.tc-page-footer a:visited {
+.tc-page-footer a:visited,
+.tc-social-list a,
+.tc-social-list a:visited {
     display: inline-block;
 	color: <<colour federatial-bright>>;
 	text-decoration: none;
@@ -298,7 +300,13 @@ body.scrolled-top .tc-page-scroll-prompt {
     border-radius: 2px;
 }
 
-.tc-page-footer a:hover {
+.tc-social-list a,
+.tc-social-list a:visited {
+	color: <<colour federatial-black>>;
+}
+
+.tc-page-footer a:hover,
+.tc-social-list a:hover {
 	background: <<colour federatial-bright>>;
 	color: <<colour federatial-black>>;
 }
@@ -307,18 +315,21 @@ body.scrolled-top .tc-page-scroll-prompt {
 	width: 160px;
 }
 
-.tc-page-footer-social ul {
+.tc-social-list ul {
 	list-style: none;
 	padding-left: 0;
 }
 
-.tc-page-footer-social ul li {
+.tc-social-list.tc-social-list-horizontal ul li {
     display: inline-block;
+}
+
+.tc-social-list ul li {
     margin: 3px;
 }
 
-.tc-page-footer-social ul li a svg,
-.tc-page-footer-social ul li a:visited svg {
+.tc-social-list ul li a svg,
+.tc-social-list ul li a:visited svg {
 	vertical-align: middle;
 	fill: <<colour federatial-black>>;
 }
