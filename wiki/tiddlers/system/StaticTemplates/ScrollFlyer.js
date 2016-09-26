@@ -17,7 +17,8 @@ TODO: Make things more configurable
 var duration = 700,
   	lastScrollPosition = 0,
   	tiddlerScrollOffset = 0,
-	isTicking = false,
+	isWaitingForAnimationFrame = false,
+	isAutoScrolling = false,
 	tiddlerShuffledPositions = [],
 	tiddlerNormalPositions = [],
 	tiddlerByTitle = {},
@@ -62,13 +63,15 @@ function onLoad() {
 
 function onScroll(e) {
 	lastScrollPosition = window.scrollY;
-	if(!isTicking) {
+	if(!isWaitingForAnimationFrame) {
 		window.requestAnimationFrame(function() {
-			updateScrollAnimation(lastScrollPosition);
-			isTicking = false;
+			if(!isAutoScrolling) {
+				updateScrollAnimation(lastScrollPosition);				
+			}
+			isWaitingForAnimationFrame = false;
 		});
 	}
-	isTicking = true;
+	isWaitingForAnimationFrame = true;
 }
 
 function onResize() {
@@ -216,6 +219,7 @@ function scrollTo(targetPos) {
 	var startPos = window.scrollY,
 		timeStart,
 		timeElapsed;
+	isAutoScrolling = true;
 	window.requestAnimationFrame(function(time) {
 		timeStart = time;
 		scrollStep(time);
@@ -225,9 +229,12 @@ function scrollTo(targetPos) {
 		if(timeElapsed < duration) {
 			var scrollPos = startPos + (targetPos - startPos) * easeInOutQuad(timeElapsed / duration);
 			window.scrollTo(0, scrollPos);
+			lastScrollPosition = scrollPos;
+			updateScrollAnimation(lastScrollPosition);
 			window.requestAnimationFrame(scrollStep)
 		} else {
 			window.scrollTo(0, targetPos);
+			isAutoScrolling = false;
 		}
 	}
 }
