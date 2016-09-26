@@ -14,7 +14,7 @@ TODO: Make things more configurable
 /*global $tw: false */
 "use strict";
 
-var duration = 700,
+var duration = 1100,
   	lastScrollPosition = 0,
   	tiddlerScrollOffset = 0,
 	isWaitingForAnimationFrame = false,
