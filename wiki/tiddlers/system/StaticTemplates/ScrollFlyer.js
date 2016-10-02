@@ -62,16 +62,16 @@ function onLoad() {
 }
 
 function onScroll(e) {
-	lastScrollPosition = window.scrollY;
-	if(!isWaitingForAnimationFrame) {
-		window.requestAnimationFrame(function() {
-			if(!isAutoScrolling) {
-				updateScrollAnimation(lastScrollPosition);				
-			}
-			isWaitingForAnimationFrame = false;
-		});
+	if(!isAutoScrolling) {
+		lastScrollPosition = window.scrollY;
+		if(!isWaitingForAnimationFrame) {
+			window.requestAnimationFrame(function() {
+					updateScrollAnimation(lastScrollPosition);
+				isWaitingForAnimationFrame = false;
+			});
+		}
+		isWaitingForAnimationFrame = true;
 	}
-	isWaitingForAnimationFrame = true;
 }
 
 function onResize() {
@@ -127,7 +127,7 @@ function updateScrollAnimation(scrollPos) {
 	// Determine where we are in the animation
 	if(scrollPos < 0 || pos === 0) {
 		// At or above the top of the page, hide the menubar and set classes
-		domMenuBar.style.transform = "translateY(-100%)";
+		domMenuBar.style.transform = "translateY(-100%) translateZ(0) ";
 		document.body.classList.add("scrolled-top");
 		document.body.classList.remove("scrolled-mid");
 		document.body.classList.remove("scrolled-bottom");
@@ -139,7 +139,7 @@ function updateScrollAnimation(scrollPos) {
 		document.body.classList.add("scrolled-bottom");
 	} else {
 		// Animate in between
-		domMenuBar.style.transform = "translateY(-" + Math.min((1 - pos) * 100,100) + "%)";
+		domMenuBar.style.transform = "translateY(-" + Math.min((1 - pos) * 100,100) + "%) translateZ(0) ";
 		document.body.classList.remove("scrolled-top");
 		document.body.classList.add("scrolled-mid");
 		document.body.classList.remove("scrolled-bottom");
@@ -162,7 +162,7 @@ function updateScrollAnimation(scrollPos) {
 			s = shuffled.scale * (1 - overEasedPos);
 			r = shuffled.rotate;
 		}
-		transform = "translateX(" + x + "px) translateY(" + y + "px) scale(" + s + ") rotate(" + r + "rad)";
+		transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(0) scale(" + s + ") rotate(" + r + "rad)";
 		domTiddler.style.transform = transform;
 	});
 }
