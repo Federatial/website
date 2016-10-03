@@ -123,11 +123,11 @@ function updateScrollAnimation(scrollPos) {
 	var animTop = tiddlerNormalPositions[0].y * 0.8, // Lowest scroll position for the animation
 		pos = Math.min(1,scrollPos/animTop), // Scroll position 0..1
 		easedPos = easeInOutQuad(pos,0,1,1), // Eased scroll position 0..1
-		overEasedPos = easeInOutQuad(-scrollPos/(animTop/7),0,1,1); // Easing used for negative scroll positions
+		overEasedPos = easeInOutQuad(-scrollPos/animTop,0,1,1); // Easing used for negative scroll positions
 	// Determine where we are in the animation
-	if(scrollPos < 0 || pos === 0) {
+	if(scrollPos <= 0 || pos === 0) {
 		// At or above the top of the page, hide the menubar and set classes
-		domMenuBar.style.transform = "translateY(-100%) translateZ(0) ";
+		domMenuBar.style.transform = "translateZ(0) translateY(-100%)";
 		document.body.classList.add("scrolled-top");
 		document.body.classList.remove("scrolled-mid");
 		document.body.classList.remove("scrolled-bottom");
@@ -139,7 +139,7 @@ function updateScrollAnimation(scrollPos) {
 		document.body.classList.add("scrolled-bottom");
 	} else {
 		// Animate in between
-		domMenuBar.style.transform = "translateY(-" + Math.min((1 - pos) * 100,100) + "%) translateZ(0) ";
+		domMenuBar.style.transform = "translateZ(0) translateY(-" + Math.min((1 - pos) * 100,100) + "%)";
 		document.body.classList.remove("scrolled-top");
 		document.body.classList.add("scrolled-mid");
 		document.body.classList.remove("scrolled-bottom");
@@ -148,21 +148,25 @@ function updateScrollAnimation(scrollPos) {
 	eachDomTiddler(function(domTiddler,index) {
 		var shuffled = tiddlerShuffledPositions[index],
 			normal = tiddlerNormalPositions[index],
-			x, y, s, r, transform;
-		if(scrollPos > 0) {
+			x, y, z = "", s, r, transform;
+		if(scrollPos >= 0) {
 			// Scroll
 			x = (shuffled.x - normal.x) * (1 - easedPos);
 			y = (shuffled.y - normal.y) * (1 - easedPos);
+			if(scrollPos > 0) {
+				z = "translateZ(0px)";
+			}
 			s = 1 + (shuffled.scale - 1) * (1 - easedPos);
 			r = shuffled.rotate * (1 - easedPos);
 		} else {
 			// Overscroll
 			x = shuffled.x - normal.x;
 			y = shuffled.y - normal.y;
-			s = shuffled.scale * (1 - overEasedPos);
-			r = shuffled.rotate;
+			z = "translateZ(0px)";
+			s = shuffled.scale;
+			r = shuffled.rotate + ((20 + index * 5) * overEasedPos);
 		}
-		transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(0) scale(" + s + ") rotate(" + r + "rad)";
+		transform = z + " translateX(" + x + "px) translateY(" + y + "px) scale(" + s + ") rotate(" + r + "rad)";
 		domTiddler.style.transform = transform;
 	});
 }
@@ -234,6 +238,8 @@ function scrollTo(targetPos) {
 			window.requestAnimationFrame(scrollStep)
 		} else {
 			window.scrollTo(0, targetPos);
+			lastScrollPosition = targetPos;
+			updateScrollAnimation(lastScrollPosition);
 			isAutoScrolling = false;
 		}
 	}
