@@ -164,7 +164,7 @@ function updateScrollAnimation(scrollPos) {
 			y = shuffled.y - normal.y;
 			z = "translateZ(0px)";
 			s = shuffled.scale;
-			r = shuffled.rotate + ((20 + index * 5) * overEasedPos);
+			r = shuffled.rotate + ((10 + index * 3) * overEasedPos);
 		}
 		transform = z + " translateX(" + x + "px) translateY(" + y + "px) scale(" + s + ") rotate(" + r + "rad)";
 		domTiddler.style.transform = transform;
