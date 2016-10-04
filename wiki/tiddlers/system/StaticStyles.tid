@@ -326,6 +326,10 @@ body.scrolled-top .tc-page-scroll-prompt {
     display: inline-block;
 }
 
+.tc-social-list.tc-social-list-horizontal.tc-social-list-centered ul {
+	text-align: center;
+}
+
 .tc-social-list ul li {
     margin: 3px;
 }
