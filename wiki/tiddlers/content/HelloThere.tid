@@ -1,7 +1,19 @@
 created: 20160712105521405
-modified: 20160712125301310
+modified: 20160923153516036
+tags: $:/_MainMenu
 title: HelloThere
 type: text/vnd.tiddlywiki
-tags: $:/_MainMenu
 
-Welcome. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+We design and build bespoke software for [[clients|Clients]] large and small. Our focus is creating generative software tools that can be used by people without conventional experience of building software: tools for making tools. By letting domain experts build their own tools to address their needs we allow them to shorten the cycle for iterating those tools, making them ever more effective.
+
+There is [[an adage|https://en.wiktionary.org/wiki/give_a_man_a_fish_and_you_feed_him_for_a_day;_teach_a_man_to_fish_and_you_feed_him_for_a_lifetime]] to the effect that giving someone a fishing rod has more long term value than giving them a basket of fish. Federatial goes further: we provide a factory that can make an infinite variety of fishing rods, each uniquely adapted for specific needs.
+
+Federatial is the home of TiddlyWiki, an unorthodox open source ~JavaScript wiki with powerful capabilities not found in other software.
+
+Email us at ''jeremy (at) federatial (dot) com'', or use the services below.
+
+<div class="tc-social-list">
+
+{{$:/_FederatialSocial}}
+
+</div>

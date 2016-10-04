@@ -12,11 +12,9 @@ title: $:/_PageFooter
 
 <div class="tc-page-footer-intro">
 
-<div class="tc-page-footer-social">
+<div class="tc-social-list tc-social-list-horizontal">
 
-* <a href="https://twitter.com/Federatial" rel="noopener noreferrer" target="_blank">{{$:/core/images/twitter}} Twitter</a>
-* <a href="https://github.com/Federatial" rel="noopener noreferrer" target="_blank">{{$:/core/images/github}} ~GitHub</a>
-* <a href="https://www.linkedin.com/company/federatial-limited" rel="noopener noreferrer" target="_blank">{{$:/core/images/linked-in}} ~LinkedIn</a>
+{{$:/_FederatialSocial}}
 
 </div>
 
