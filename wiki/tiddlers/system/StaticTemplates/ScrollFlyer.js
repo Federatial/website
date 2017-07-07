@@ -16,6 +16,7 @@ TODO: Make things more configurable
 
 var duration = 1100,
   	lastScrollPosition = 0,
+  	lastTiltPosition = 0,
   	tiddlerScrollOffset = 0,
 	isWaitingForAnimationFrame = false,
 	isAutoScrolling = false,
@@ -39,6 +40,7 @@ for(var index = 0; index < anchors.length; index++) {
 // Attach our event listeners
 window.addEventListener("load",onLoad,false);
 window.addEventListener("scroll",onScroll,false);
+// window.addEventListener("deviceorientation",onDeviceOrientationEvent,false);
 window.addEventListener("resize",onResize,false);
 document.body.addEventListener("click",onClick,false);
 window.addEventListener("hashchange",onHashChange,false);
@@ -64,14 +66,23 @@ function onLoad() {
 function onScroll(e) {
 	if(!isAutoScrolling) {
 		lastScrollPosition = window.scrollY;
-		if(!isWaitingForAnimationFrame) {
-			window.requestAnimationFrame(function() {
-					updateScrollAnimation(lastScrollPosition);
-				isWaitingForAnimationFrame = false;
-			});
-		}
-		isWaitingForAnimationFrame = true;
+		triggerAnimationFrame();
 	}
+}
+
+function triggerAnimationFrame() {
+	if(!isWaitingForAnimationFrame) {
+		window.requestAnimationFrame(function() {
+				updateScrollAnimation(lastScrollPosition);
+			isWaitingForAnimationFrame = false;
+		});
+	}
+	isWaitingForAnimationFrame = true;
+}
+
+function onDeviceOrientationEvent(eventData) {
+	lastTiltPosition = eventData.beta;
+	triggerAnimationFrame();
 }
 
 function onResize() {
@@ -157,7 +168,7 @@ function updateScrollAnimation(scrollPos) {
 				z = "translateZ(0px)";
 			}
 			s = 1 + (shuffled.scale - 1) * (1 - easedPos);
-			r = shuffled.rotate * (1 - easedPos);
+			r = (shuffled.rotate  - lastTiltPosition * (6.28 / 360)) * (1 - easedPos);
 		} else {
 			// Overscroll
 			x = shuffled.x - normal.x;
